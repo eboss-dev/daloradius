@@ -849,6 +849,10 @@ CREATE TABLE `radacct` (
   `acctstartdelay` int(12) default NULL,
   `acctstopdelay` int(12) default NULL,
   `xascendsessionsvrkey` varchar(10) collate utf8_unicode_ci default NULL,
+  `framedipv6address` varchar(45) NOT NULL default '',
+  `framedipv6prefix` varchar(45) NOT NULL default '',
+  `framedinterfaceid` varchar(45) NOT NULL default '',
+  `delegatedipv6prefix` varchar(45) NOT NULL default '',
   PRIMARY KEY  (`radacctid`),
   KEY `username` (`username`),
   KEY `framedipaddress` (`framedipaddress`),
@@ -858,6 +862,10 @@ CREATE TABLE `radacct` (
   KEY `acctstarttime` (`acctstarttime`),
   KEY `acctstoptime` (`acctstoptime`),
   KEY `nasipaddress` (`nasipaddress`)
+  KEY `framedipv6address` (`framedipv6address`),
+  KEY `framedipv6prefix` (`framedipv6prefix`),
+  KEY `framedinterfaceid` (`framedinterfaceid`),
+  KEY `delegatedipv6prefix` (`delegatedipv6prefix`),
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 SET character_set_client = @saved_cs_client;
 
